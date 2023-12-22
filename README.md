@@ -1,1 +1,1 @@
-# hackathon-SIH
+# Smart India Hackathon 2020
