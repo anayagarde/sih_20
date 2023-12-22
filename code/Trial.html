@@ -1,0 +1,51 @@
+<html>
+<title>Farmers</title>
+<head><h1=align="center">KISAN SEVA</h1>
+<h2 align="center">Government Of Uttarakhand</h2>
+</head>
+<style>
+</style>
+
+<body>
+
+<p><select  id= "1">
+       <option selected = "selected" >Select Product Category</option>
+       <option value="1">Vegetables</option>
+       <option value="2">Rice</option>
+       <option value="3">Wheat</option>
+       </select>
+       </p>
+
+    <p><select  id="2">
+        <option selected = "selected" ></option></select>
+		<script>
+	
+var Vegetables = ["Tomato","Carrot","Onion","Potato"];
+var Rice = ["Basmati","Indrayani","Jasmine","Arborio"];
+var Wheat = ["Durum","Soft Red Winter","Hard Red Spring","Soft White"];
+
+
+document.getElementById("1").addEventListener("change", function(e){
+        var select2 = document.getElementById("2");
+        select2.innerHTML = "";
+        var aItems = [];
+    if(this.value == "2"){
+        aItems = Wheat;
+    } else if (this.value == "3") {
+        aItems = Rice;
+    } else if(this.value == "1") {
+        aItems = Vegetables;
+    }
+    for(var i=0,len=aItems.length; i<len;i++) {
+        var option = document.createElement("option");
+        option.value= (i+1);
+        var textNode = document.createTextNode(aItems[i]);
+        option.appendChild(textNode);
+        select2.appendChild(option);
+    }
+    
+}, false);
+</script>
+		
+</body>
+</html>

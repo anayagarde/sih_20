@@ -1,0 +1,92 @@
+<html>
+<title>Upload Product</title>
+<style>
+h1{
+background: yellow;
+}
+.selected {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+table{
+  border: 1px solid black;
+  cellspacing: 50%;
+  border-spacing: 15px;
+  width: 100%;
+ }
+ 
+input[type=text] {
+  border: 2px solid green;
+  border-radius: 4px;
+}
+
+</style>
+<body>
+<h1 align="center">Upload Your Products</h2>
+<table>
+  <tr>
+         
+  <th>e-resourses:<a href="abcd.html">OpenLink</a></th>
+  <th>Price Chart:<a href="abcd.html">Price chart</a></th>
+  <th>FAQ's:<a href="abcd.html">FAQ's</a></th>
+  </tr>
+  </table>
+  <table>
+  <tr>
+  <th>
+<p><b>Select category of produce</b></p>
+<p><select  id= "1">
+       <option selected = "selected" >Select Product Category</option>
+       <option value="1">Vegetables</option>
+       <option value="2">Rice</option>
+       <option value="3">Wheat</option>
+       </select>
+       </p>
+<p><b>Select specific type</b></p>
+    <p><select  id="2">
+        <option selected = "selected" ></option></select>
+		<script>
+	
+var Vegetables = ["Tomato","Carrot","Onion","Potato"];
+var Rice = ["Basmati","Indrayani","Jasmine","Arborio"];
+var Wheat = ["Durum","Soft Red Winter","Hard Red Spring","Soft White"];
+
+
+document.getElementById("1").addEventListener("change", function(e){
+        var select2 = document.getElementById("2");
+        select2.innerHTML = "";
+        var aItems = [];
+    if(this.value == "3"){
+        aItems = Wheat;
+    } else if (this.value == "2") {
+        aItems = Rice;
+    } else if(this.value == "1") {
+        aItems = Vegetables;
+    }
+    for(var i=0,len=aItems.length; i<len;i++) {
+        var option = document.createElement("option");
+        option.value= (i+1);
+        var textNode = document.createTextNode(aItems[i]);
+        option.appendChild(textNode);
+        select2.appendChild(option);
+    }
+    
+}, false);
+</script>
+<form>
+<p><b>Enter Quantity(in Kg.)</b></p>
+<input type="text" name="quantiy">
+<p><b>Enter price(in Rs.)</b></p>
+<input type="text" name="price">
+<p>*see price chart for market price</p>
+<input type="submit" value="Upload">
+</th>
+</form>
+</table>		
+</body>
+</html>
+
+
